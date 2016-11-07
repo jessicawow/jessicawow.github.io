@@ -1,0 +1,25 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var isIOS = function() {
+        return navigator.userAgent.match('iPad') || 
+               navigator.userAgent.match('iPhone') || 
+               navigator.userAgent.match('iPod');
+};
+
+window.onload = function (){
+    if (isIOS()) {
+  		var url = window.location.href;
+  		var temp = url.split("?");
+  		var appLocation = temp[1];
+  		window.location = "wpl://" + decodeURIComponent(appLocation);
+  		setTimeout(function () { 
+    		window.location = "itms-apps://itunes.apple.com/app/woodpecker-watch/id1067723008"; 
+  		}, 25);  		
+  	}
+}
+</script>
+</body>
+</html>
